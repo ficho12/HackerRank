@@ -16,7 +16,15 @@ vector<string> split(const string &);
  */
 
 int sockMerchant(int n, vector<int> ar) {
-
+    map<int, int> m;
+    for (const auto& a : ar) {
+        m[a]++;
+    }
+    int ret = 0;
+    for (const auto& [k, v] : m) {
+        ret += v / 2;
+    }
+    return ret;
 }
 
 int main()
