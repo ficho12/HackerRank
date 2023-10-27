@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+//NOT SOLVED YET
+
 int month[15];
 
 void updateLeapYear(int year) {

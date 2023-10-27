@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+//NOT SOLVED YET
 // ~ no response on stdout ~ Can't figure out why. Not working on any version of c++ on the hackerrank IDE.
 
 void findZigZagSequence(vector < int > a, int n){
