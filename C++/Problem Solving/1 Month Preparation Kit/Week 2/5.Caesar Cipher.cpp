@@ -15,16 +15,18 @@ string rtrim(const string &);
  */
 
 string caesarCipher(string s, int k) {
+    string ret = "";
     for (auto& c : s) {
         if (isalpha(c)) {
             if (isupper(c)) {
-                c = (c - 'A' + k) % 26 + 'A';
+                ret += (c - 'A' + k) % 26 + 'A';
             } else {
-                c = (c - 'a' + k) % 26 + 'a';
+                ret += (c - 'a' + k) % 26 + 'a';
             }
         }
     }
-    return s;
+    cout << ret << endl;
+    return ret;
 }
 
 int main()
