@@ -4,6 +4,7 @@
         "ostream": "cpp",
         "ranges": "cpp",
         "istream": "cpp",
-        "chrono": "cpp"
+        "chrono": "cpp",
+        "string": "cpp"
     }
 }
