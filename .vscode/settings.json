@@ -5,6 +5,7 @@
         "ranges": "cpp",
         "istream": "cpp",
         "chrono": "cpp",
-        "string": "cpp"
+        "string": "cpp",
+        "random": "cpp"
     }
 }
