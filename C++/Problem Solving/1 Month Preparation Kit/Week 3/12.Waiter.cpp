@@ -16,7 +16,52 @@ vector<string> split(const string &);
  */
 
 vector<int> waiter(vector<int> number, int q) {
+    vector<int> result;
+    vector<int> primes;
+    vector<int> A, B;  // Use vectors instead of stacks
 
+    // Generate prime numbers up to q
+    int i = 2;
+    while (primes.size() < q) {
+        bool isPrime = true;
+        for (int j = 2; j <= sqrt(i); j++) {
+            if (i % j == 0) {
+                isPrime = false;
+                break;
+            }
+        }
+        if (isPrime) primes.push_back(i);
+        i++;
+    }
+
+    for (int i = 0; i < q; i++) {
+        vector<int> newA, newB;  // Use vectors for newA and newB
+
+        for (int j = number.size() - 1; j >= 0; j--) {
+            int n = number[j];
+
+            if (n % primes[i] == 0) {
+                newB.push_back(n);
+            } else {
+                newA.push_back(n);
+            }
+        }
+
+        // Append elements from newB to the result
+        for (int j = newB.size() - 1; j >= 0; j--) {
+            result.push_back(newB[j]);
+        }
+
+        // Set newA as the new number stack for the next iteration
+        number = newA;
+    }
+
+    // Append remaining elements from the number vector to the result
+    for (int i = number.size() - 1; i >= 0; i--) {
+        result.push_back(number[i]);
+    }
+
+    return result;
 }
 
 int main()
