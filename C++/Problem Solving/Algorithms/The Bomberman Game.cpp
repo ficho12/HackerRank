@@ -14,7 +14,6 @@ vector<string> split(const string &);
  *  1. INTEGER n
  *  2. STRING_ARRAY grid
  */
-// Works, but needs to be optimized.
 vector<string> bomberMan(int n, vector<string> grid) {
     int r = grid.size();
     int c = grid[0].size();
@@ -27,6 +26,12 @@ vector<string> bomberMan(int n, vector<string> grid) {
         return grid;
     }else if(n%2 == 0) { // If n is even, then the grid will be full of bombs. We don't need to calculate the outcome.
         return fullGrid;
+    }else if(n%4 == 3)  // If if n = 3, 7, 11, 15, 19,23 = if (n)%4==3 -> flip once
+    {
+        n = 3;
+    } else if (n%4 == 1) // If n = 5, 9, 13, 17, 21, 25 = if (n)%4==1 -> flip twice
+    {
+        n = 5;
     }
     // If n is odd and 2 seconds have passed, then we need to calculate the outcome.
     do{
