@@ -41,7 +41,7 @@ vector<int> solve(vector<int> arr, vector<int> queries) {
                 min = arr[window.front()];
             }
         }
-        ans[i] = min;
+        ans[i] = min
     }
     return ans;
 }
